@@ -1,0 +1,231 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* BACKGROUND */
+body {
+  height: 100vh;
+  background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #45b7d1, #f9ca24);
+  background-size: 400% 400%;
+  animation: gradientShift 10s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.1);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.navbar h2 {
+  color: #fff;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.navbar button {
+  background: linear-gradient(135deg, #ff4757, #ff3838);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(255, 71, 87, 0.4);
+}
+
+.navbar button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(255, 71, 87, 0.6);
+}
+
+/* CENTER */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 85vh;
+}
+
+/* CARD */
+.card {
+  width: 400px;
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  border: 3px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  margin: -3px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, #ff9ff3, #feca57, #48dbfb, #0abde3);
+}
+
+/* TITLE */
+.card h3 {
+  margin-bottom: 20px;
+  color: #2f3542;
+  font-size: 28px;
+  font-weight: 700;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+/* INPUT */
+input {
+  width: 100%;
+  margin: 15px 0;
+  padding: 15px;
+  border-radius: 15px;
+  border: 2px solid #ff9ff3;
+  background: rgba(255,255,255,0.9);
+  outline: none;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+input:focus {
+  border-color: #feca57;
+  box-shadow: 0 0 10px rgba(254, 202, 87, 0.5);
+}
+
+/* FILE INPUT */
+input[type="file"] {
+  background: none;
+}
+
+/* BUTTON */
+.card button {
+  margin-top: 20px;
+  padding: 15px;
+  width: 100%;
+  border-radius: 15px;
+  border: none;
+  font-weight: bold;
+  font-size: 16px;
+  background: linear-gradient(135deg, #ff6b6b, #ffa726);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+}
+
+.card button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(255, 107, 107, 0.6);
+}
+
+/* HIDDEN */
+.hidden {
+  display: none;
+}
+
+/* ID CARD */
+.idcard {
+  text-align: center;
+}
+
+.idcard h2 {
+  color: #2f3542;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.idcard h3 {
+  color: #ff6b6b;
+  font-size: 24px;
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+.idcard p {
+  color: #57606f;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.profile {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid #48dbfb;
+  margin: 20px 0;
+  object-fit: cover;
+  box-shadow: 0 5px 15px rgba(72, 219, 251, 0.4);
+}
+
+/* subtitle */
+.subtitle {
+  font-size: 14px;
+  color: #57606f;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+/* drag area */
+.drop-area {
+  border: 3px dashed #ff9ff3;
+  border-radius: 15px;
+  padding: 25px;
+  margin-top: 15px;
+  cursor: pointer;
+  color: #ff9ff3;
+  transition: 0.3s;
+  background: rgba(255, 159, 243, 0.1);
+}
+
+.drop-area p {
+  margin: 0;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.drop-area span {
+  font-size: 14px;
+  color: #ff6b9d;
+}
+
+.drop-area.dragover {
+  background: rgba(255, 159, 243, 0.3);
+  border-color: #feca57;
+}
+
+/* preview image */
+.preview {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-top: 20px;
+  object-fit: cover;
+  border: 4px solid #48dbfb;
+  box-shadow: 0 5px 15px rgba(72, 219, 251, 0.4);
+}

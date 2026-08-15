@@ -1,0 +1,37 @@
+{
+  "name": "auth-profile-system",
+  "version": "1.0.0",
+  "description": "Auth profile system - backend + static frontend",
+  "type": "module",
+  "scripts": {
+    "backend": "nodemon backend/src/server.js",
+    "frontend": "serve -s frontend -l 3000",
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\""
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "*",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.9.2",
+    "multer": "*"
+  },
+  "devDependencies": {
+    "concurrently": "*",
+    "nodemon": "^3.1.14",
+    "serve": "*"
+  },
+  "author": "",
+  "license": "ISC",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mohd-Dilshan/auth-profile-system.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/Mohd-Dilshan/auth-profile-system/issues"
+  },
+  "homepage": "https://github.com/Mohd-Dilshan/auth-profile-system#readme"
+}
